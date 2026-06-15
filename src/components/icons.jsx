@@ -93,3 +93,16 @@ export const BookIcon = () => (
     <path d="M9 9h6M9 13h6M9 17h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
   </svg>
 )
+
+export const PhoneIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <path d="M2.5 1.5h2.8l1.2 2.8-1.5 1.5a8.5 8.5 0 003.2 3.2l1.5-1.5 2.8 1.2v2.8a1 1 0 01-1 1A10.5 10.5 0 011.5 2.5a1 1 0 011-1z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
+  </svg>
+)
+
+export const MailIcon = () => (
+  <svg width="14" height="12" viewBox="0 0 14 12" fill="none">
+    <rect x="1" y="1" width="12" height="10" rx="1" stroke="currentColor" strokeWidth="1.2" />
+    <path d="M1 3.5l6 3.5 6-3.5" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
+  </svg>
+)

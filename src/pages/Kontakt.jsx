@@ -2,15 +2,17 @@ import { useState } from 'react'
 import { img } from '../data.js'
 import PageHero from '../components/PageHero.jsx'
 import { SecOrn, FolkBorder } from '../components/common.jsx'
-import { CheckIcon } from '../components/icons.jsx'
+import { CheckIcon, PhoneIcon, MailIcon } from '../components/icons.jsx'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const TEAM = [
-  { initial: 'L', name: 'Leder', delay: 1 },
-  { initial: 'N', name: 'Nestleder', delay: 2 },
-  { initial: 'K', name: 'Kasserer', delay: 3 },
-  { initial: 'S', name: 'Sekretær', delay: 4 },
+  { name: 'Jan Erik Sundøy', role: 'Leder', phone: '905 86 311', img: 'https://stjordal-historielag.no/image/v2/image/7713/1923908/Jan_Erik.jpg?autorotate=true&width=400&height=400&mode=crop', delay: 1 },
+  { name: 'Asbjørn Sjølseth Jakobsen', role: 'Kasserer', phone: '958 89 829', img: 'https://stjordal-historielag.no/image/v2/image/7713/1923907/Asbj%c3%b8rn.jpg?autorotate=true&width=400&height=400&mode=crop', delay: 2 },
+  { name: 'Arve Rosvold Alver', role: 'Styremedlem', phone: '992 97 406', img: 'https://stjordal-historielag.no/image/v2/image/7713/10427908/Arve_Rosvold_Alver.png?autorotate=true&width=400&height=400&mode=crop', delay: 3 },
+  { name: 'Unni Raaen Nysæther', role: 'Styremedlem', phone: '958 88 032', img: 'https://stjordal-historielag.no/image/v2/image/7713/5325038/Unni2.jpg?autorotate=true&width=400&height=400&mode=crop', delay: 4 },
+  { name: 'Kjell Erik Pettersson', role: 'Styremedlem', phone: '482 92 196', img: 'https://stjordal-historielag.no/image/v2/image/7713/1068741/kjell-erik-pettersson-foto-privat.jpg?autorotate=true&width=400&height=400&mode=crop', delay: 5 },
+  { name: 'Inger Synnøve Minde', role: 'Varamedlem', phone: '932 37 272', img: 'https://stjordal-historielag.no/image/v2/image/7713/11071282/Inger_Synn%c3%b8ve.jpg?autorotate=true&width=400&height=400&mode=crop', delay: 6 },
 ]
 
 export default function Kontakt() {
@@ -119,17 +121,19 @@ export default function Kontakt() {
           </div>
           <div className="team-grid">
             {TEAM.map((t) => (
-              <div key={t.initial} className={`team-card reveal reveal-d${t.delay}`}>
-                <div className="team-avatar">{t.initial}</div>
+              <div key={t.name} className={`team-card reveal reveal-d${t.delay}`}>
+                <div className="team-avatar">
+                  <img src={t.img} alt={t.name} />
+                </div>
                 <p className="team-name">{t.name}</p>
-                <p className="team-role">Stjørdal historielag</p>
+                <p className="team-role">{t.role}</p>
+                <div className="team-contact">
+                  <p className="team-phone"><PhoneIcon /> {t.phone}</p>
+                  <a href="mailto:stjordal.historielag@gmail.com" className="team-email"><MailIcon /> Send e-post</a>
+                </div>
               </div>
             ))}
           </div>
-          <p style={{ textAlign: 'center', color: 'var(--charcoal-60)', fontSize: '.85rem', marginTop: '2rem' }}>
-            Fullstendig styreoversikt med navn oppdateres etter hvert årsmøte. Henvendelser til styret kan rettes til{' '}
-            <a href="mailto:stjordal.historielag@gmail.com" style={{ color: 'var(--terracotta)' }}>stjordal.historielag@gmail.com</a>.
-          </p>
         </div>
       </section>
     </>

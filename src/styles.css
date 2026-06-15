@@ -499,15 +499,17 @@ button { font: inherit; }
 /* =============================================
    STYRET / TEAM
 ============================================= */
-.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
-.team-card { background: var(--parchment); border: 1px solid var(--parchment-drk); border-radius: 4px; padding: 1.8rem 1.3rem; text-align: center; transition: transform .2s, box-shadow .2s; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+.team-card { background: var(--parchment); border: 1px solid var(--parchment-drk); border-radius: 4px; padding: 1.8rem 1.3rem 0; text-align: center; transition: transform .2s, box-shadow .2s; }
 .team-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(44,40,37,.1); }
-.team-avatar { width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 1.1rem; background: var(--green); color: var(--parchment); display: flex; align-items: center; justify-content: center; font-family: var(--hf); font-size: 1.7rem; font-weight: 600; position: relative; }
-.team-avatar::after { content: ''; position: absolute; inset: 4px; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; }
-.team-card:nth-child(3n) .team-avatar { background: var(--terracotta); }
-.team-card:nth-child(3n+1) .team-avatar { background: var(--green-dk); }
+.team-avatar { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.1rem; overflow: hidden; border: 3px solid var(--parchment-drk); }
+.team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .team-name { font-family: var(--hf); font-size: 1.2rem; font-weight: 600; margin-bottom: .25rem; }
 .team-role { font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--terracotta); }
+.team-contact { margin-top: 1.2rem; border-top: 1px solid var(--parchment-drk); }
+.team-phone { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .65rem 0; font-size: .875rem; border-bottom: 1px solid var(--parchment-drk); color: var(--charcoal); }
+.team-email { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .65rem 0; font-size: .875rem; color: var(--terracotta); transition: color .2s; }
+.team-email:hover { color: var(--terra-dk); }
 
 /* =============================================
    KONTAKT
@@ -581,6 +583,8 @@ button { font: inherit; }
 .reveal-d2 { transition-delay: .2s; }
 .reveal-d3 { transition-delay: .3s; }
 .reveal-d4 { transition-delay: .4s; }
+.reveal-d5 { transition-delay: .5s; }
+.reveal-d6 { transition-delay: .6s; }
 
 /* =============================================
    RESPONSIVE
@@ -588,7 +592,7 @@ button { font: inherit; }
 @media (max-width: 980px) {
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2.2rem; }
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
   .collection-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }
