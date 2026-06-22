@@ -67,6 +67,10 @@ button { font: inherit; }
   border-radius: 3px;
   object-fit: contain;
   flex-shrink: 0;
+  transition: filter .35s;
+}
+.site-nav.scrolled .logo-mark {
+  filter: brightness(0) opacity(.85);
 }
 .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
 .logo-title { font-family: var(--hf); font-size: 1rem; font-weight: 600; letter-spacing: .02em; transition: color .3s; }
